@@ -3,6 +3,7 @@ class Nodo:
     def __init__(self, head, color):
         self.head = head
         self.color = color #[rojo, azul, verde, amarillo] ; -1 = No hay color
+        self.inicial = color
         self.temp = -1
         self.up = None
         self.down = None

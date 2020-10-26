@@ -114,3 +114,9 @@ class Estructura:
             layer[i].temp = -1
 
         return 
+    
+    def movUp(self,layer0,layer1,layer2,layer3,layer4):
+        return
+
+    def movDown(self,layer0,layer1,layer2,layer3,layer4):
+        return
