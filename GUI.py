@@ -9,7 +9,7 @@ class GUI:
 
         #Tamaño de los LABELS
         self.width = 14
-        self.height = 7
+        self.height = 6
 
         #Inicialización de la estructura del juego (OBJETO Estructura)
         self.estructura = Estructura()
@@ -52,16 +52,20 @@ class GUI:
 
         #Botones de Movimiento UP y DOWN
         self.up1 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down1 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.down1 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
 
         self.up2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.down2 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
 
-        self.up2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.up3 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.down3 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
 
-        self.up2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.up4 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
+        self.down4 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
+
+
+        #Botones Auxiliares
+        self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -105,6 +109,22 @@ class GUI:
 
         self.leftLayer4.grid(row = 2, column = 0)
         self.rightLayer4.grid(row = 2, column = 5)
+
+        #Desplegar Botones UP y DOWN
+        self.up1.grid(row=0, column = 1)
+        self.down1.grid(row=7, column = 1)
+
+        self.up2.grid(row=0, column = 2)
+        self.down2.grid(row=7, column = 2)
+
+        self.up3.grid(row=0, column = 3)
+        self.down3.grid(row=7, column = 3)
+
+        self.up4.grid(row=0, column = 4)
+        self.down4.grid(row=7, column = 4)
+
+        #Desplegar Botones Auxiliares
+        self.resetButton.grid(row = 0, column = 6)
 
 
     def fijarColoresLayer0(self):
@@ -154,6 +174,18 @@ class GUI:
         self.fijarColoresLayer2()
         self.fijarColoresLayer3()
         self.fijarColoresLayer4()
+        return
+
+    def reset(self):
+        self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
+        
+        for i in range(len(self.estructura.layer1)):
+            self.estructura.layer1[i].color = self.estructura.layer1[i].inicial
+            self.estructura.layer2[i].color = self.estructura.layer2[i].inicial
+            self.estructura.layer3[i].color = self.estructura.layer3[i].inicial
+            self.estructura.layer4[i].color = self.estructura.layer4[i].inicial
+        self.actualizarColores()
+
         return
 
     def movLateral(self, direccion, layer):

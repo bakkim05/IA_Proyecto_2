@@ -3,11 +3,11 @@ from Nodo import Nodo
 class Estructura:
     def __init__(self):
         #inicializar 
-        self.layer0 = [Nodo(True,-1)]
-        self.layer1 = [Nodo(False,0),Nodo(False,1),Nodo(False,2),Nodo(False,3)]
-        self.layer2 = [Nodo(False,0),Nodo(False,1),Nodo(False,2),Nodo(False,3)]
-        self.layer3 = [Nodo(False,0),Nodo(False,1),Nodo(False,2),Nodo(False,3)]
-        self.layer4 = [Nodo(False,0),Nodo(False,1),Nodo(False,2),Nodo(False,3)]
+        self.layer0 = [Nodo(-1)]
+        self.layer1 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
+        self.layer2 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
+        self.layer3 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
+        self.layer4 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
 
         #Conexiones Layer 0
         self.layer0[0].up = self.layer1[0]
