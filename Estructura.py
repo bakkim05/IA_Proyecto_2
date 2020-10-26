@@ -88,3 +88,29 @@ class Estructura:
         self.layer4[3].down = self.layer3[3]
         self.layer4[3].left = self.layer4[2]
         self.layer4[3].right = self.layer4[0]
+
+    #sirve para los layers diferentes al 0
+    def movLeft(self,layer):
+        layer[0].temp = layer[1].color
+        layer[1].temp = layer[2].color
+        layer[2].temp = layer[3].color
+        layer[3].temp = layer[0].color
+
+        for i in range(len(layer)):
+            layer[i].color = layer[i].temp
+            layer[i].temp = -1
+
+        return 
+
+    #sirve para los layers diferentes al 0
+    def movRight(self,layer):
+        layer[0].temp = layer[3].color
+        layer[1].temp = layer[0].color
+        layer[2].temp = layer[1].color
+        layer[3].temp = layer[2].color
+
+        for i in range(len(layer)):
+            layer[i].color = layer[i].temp
+            layer[i].temp = -1
+
+        return 
