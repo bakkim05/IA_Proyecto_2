@@ -90,7 +90,7 @@ class Estructura:
         self.layer4[3].right = self.layer4[0]
 
     #sirve para los layers diferentes al 0
-    def movLeft(self,layer):
+    def movLeft(self, layer):
         layer[0].temp = layer[1].color
         layer[1].temp = layer[2].color
         layer[2].temp = layer[3].color
@@ -103,7 +103,7 @@ class Estructura:
         return 
 
     #sirve para los layers diferentes al 0
-    def movRight(self,layer):
+    def movRight(self, layer):
         layer[0].temp = layer[3].color
         layer[1].temp = layer[0].color
         layer[2].temp = layer[1].color
@@ -115,8 +115,18 @@ class Estructura:
 
         return 
     
-    def movUp(self,layer0,layer1,layer2,layer3,layer4):
+    def movUpVoid(self, layerDown, layerUp, colum):
+        layerDown[colum-1].temp = layerUp[colum-1].color
+        layerUp[colum-1].temp = layerDown[colum-1].color
+
+        layerDown[colum-1].color = layerDown[colum-1].temp
+        layerUp[colum-1].color = layerUp[colum-1].temp
         return
 
-    def movDown(self,layer0,layer1,layer2,layer3,layer4):
+    def movDownVoid(self, layerDown, layerUp, colum):
+        layerDown[colum-1].temp = layerDown[colum-1].color
+        layerUp[colum-1].temp = layerUp[colum-1].color
+
+        layerDown[colum-1].color = layerUp[colum-1].temp
+        layerUp[colum-1].color = layerDown[colum-1].temp
         return

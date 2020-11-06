@@ -51,17 +51,17 @@ class GUI:
         self.rightLayer4 = Button(master, text= ">", width=self.width, command = lambda: self.movLateral(1,4))
 
         #Botones de Movimiento UP y DOWN
-        self.up1 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down1 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
+        self.up1 = Button(master, text= "^", width=self.width, command = lambda: self.movVertical(0,1))
+        self.down1 = Button(master, text= "v", width=self.width, command = lambda: self.movVertical(1,1))
 
-        self.up2 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down2 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
+        self.up2 = Button(master, text= "^", width=self.width, command = lambda: self.movVertical(0,2))
+        self.down2 = Button(master, text= "v", width=self.width, command = lambda: self.movVertical(1,2))
 
-        self.up3 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down3 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
+        self.up3 = Button(master, text= "^", width=self.width, command = lambda: self.movVertical(0,3))
+        self.down3 = Button(master, text= "v", width=self.width, command = lambda: self.movVertical(1,3))
 
-        self.up4 = Button(master, text= "^", width=self.width, command = lambda: print("hello"))
-        self.down4 = Button(master, text= "v", width=self.width, command = lambda: print("hello"))
+        self.up4 = Button(master, text= "^", width=self.width, command = lambda: self.movVertical(0,4))
+        self.down4 = Button(master, text= "v", width=self.width, command = lambda: self.movVertical(1,4))
 
 
         #Botones Auxiliares
@@ -223,3 +223,128 @@ class GUI:
                 self.estructura.movRight(self.estructura.layer4)
                 self.fijarColoresLayer4()
                 return
+
+    def movVertical(self, direccion, colum):
+        if (direccion == 0):
+            if colum == 1:
+                if self.estructura.layer0[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer0, self.estructura.layer1, colum)
+                    self.fijarColoresLayer0()
+                    self.fijarColoresLayer1()
+                elif self.estructura.layer1[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
+                    self.fijarColoresLayer1()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer2[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer3()
+                elif self.estructura.layer3[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer4()
+                return
+            elif colum == 2:
+                if self.estructura.layer1[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
+                    self.fijarColoresLayer1()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer2[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer3()
+                elif self.estructura.layer3[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer4()
+                return
+            elif colum == 3:
+                if self.estructura.layer1[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
+                    self.fijarColoresLayer1()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer2[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer3()
+                elif self.estructura.layer3[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer4()
+                return
+            elif colum == 4:
+                if self.estructura.layer1[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
+                    self.fijarColoresLayer1()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer2[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer3()
+                elif self.estructura.layer3[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer4()
+                return
+
+        elif (direccion == 1):
+            if colum == 1:
+                if self.estructura.layer1[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer0, colum)
+                    self.fijarColoresLayer1()
+                    self.fijarColoresLayer0()
+                elif self.estructura.layer2[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer1()
+                elif self.estructura.layer3[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer4[0].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
+                    self.fijarColoresLayer4()
+                    self.fijarColoresLayer3()
+                return
+            elif colum == 2:
+                if self.estructura.layer2[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer1()
+                elif self.estructura.layer3[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer4[1].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
+                    self.fijarColoresLayer4()
+                    self.fijarColoresLayer3()
+                return
+            elif colum == 3:
+                if self.estructura.layer2[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer1()
+                elif self.estructura.layer3[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer4[2].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
+                    self.fijarColoresLayer4()
+                    self.fijarColoresLayer3()
+                return
+            elif colum == 4:
+                if self.estructura.layer2[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
+                    self.fijarColoresLayer2()
+                    self.fijarColoresLayer1()
+                elif self.estructura.layer3[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
+                    self.fijarColoresLayer3()
+                    self.fijarColoresLayer2()
+                elif self.estructura.layer4[3].color == -1:
+                    self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
+                    self.fijarColoresLayer4()
+                    self.fijarColoresLayer3()
+                return        
