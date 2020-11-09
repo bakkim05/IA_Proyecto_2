@@ -1,15 +1,14 @@
-import numpy
 import csv
-from numpy import genfromtxt
 from tkinter import Tk, Label, Button
+from Estructura import Estructura
 
-docDir = '/home/andertaylor/Proyecto2/matriz.csv'
+docDir = 'matriz.csv'
 
 class GUI:
     def __init__(self,master):
         self.master = master
         master.title("Proyecto 2")
-        master.geometry("800x600")
+        master.geometry("870x600")
 
         #Tamaño de los LABELS
         self.width = 14
@@ -70,6 +69,7 @@ class GUI:
 
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
+        self.loadButton = Button(master, text="LOAD", width=self.width, command = lambda: self.leerMat())
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -129,6 +129,7 @@ class GUI:
 
         #Desplegar Botones Auxiliares
         self.resetButton.grid(row = 0, column = 6)
+        self.loadButton.grid(row = 0, column = 7)
 
 
     def fijarColoresLayer0(self):
@@ -200,11 +201,7 @@ class GUI:
         mat = m
 
         
-    """ matriz = [[mat[0],mat[1],mat[2], mat[3]],
-                  [mat[4],mat[5],mat[6], mat[7]],
-                  [mat[8],mat[9],mat[10], mat[11]],
-                  [mat[12],mat[13],mat[14], mat[15]]]"""
-        
+    
         #Layer 1, la primera fila de arriba hacia abajo
         self.estructura.layer1[0].color = mat[0]
         self.estructura.layer1[1].color = mat[1]
@@ -229,9 +226,17 @@ class GUI:
         self.estructura.layer4[2].color = mat[14]
         self.estructura.layer4[3].color = mat[15]
 
+        self.actualizarColores()
+
     def reset(self):
+        self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
         
-        self.leerMat()
+        for i in range(len(self.estructura.layer1)):
+            self.estructura.layer1[i].color = self.estructura.layer1[i].inicial
+            self.estructura.layer2[i].color = self.estructura.layer2[i].inicial
+            self.estructura.layer3[i].color = self.estructura.layer3[i].inicial
+            self.estructura.layer4[i].color = self.estructura.layer4[i].inicial
+
         self.actualizarColores()
 
 
