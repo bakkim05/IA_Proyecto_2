@@ -7,7 +7,7 @@ class GUI:
     def __init__(self,master):
         self.master = master
         master.title("Proyecto 2")
-        master.geometry("870x600")
+        master.geometry("1000x600")
 
         #Tamaño de los LABELS
         self.width = 14
@@ -68,7 +68,7 @@ class GUI:
 
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
-        self.loadButton = Button(master, text="LOAD", width=self.width, command = lambda: self.leerMat())
+
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -128,7 +128,6 @@ class GUI:
 
         #Desplegar Botones Auxiliares
         self.resetButton.grid(row = 0, column = 6)
-        self.loadButton.grid(row = 0, column = 7)
 
 
     def fijarColoresLayer0(self):
@@ -181,6 +180,7 @@ class GUI:
         return
 
     def reset(self):
+        self.estructura.resetZero()
         self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
         
         for i in range(len(self.estructura.layer1)):
