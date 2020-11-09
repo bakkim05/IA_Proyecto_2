@@ -125,6 +125,7 @@ class Estructura:
 
         layerDown[colum-1].color = layerDown[colum-1].temp
         layerUp[colum-1].color = layerUp[colum-1].temp
+
         return
 
     def movDownVoid(self, layerDown, layerUp, colum):
@@ -133,6 +134,7 @@ class Estructura:
 
         layerDown[colum-1].color = layerUp[colum-1].temp
         layerUp[colum-1].color = layerDown[colum-1].temp
+        
         return
 
     def resetZero(self):
