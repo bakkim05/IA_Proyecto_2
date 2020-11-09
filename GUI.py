@@ -1,4 +1,3 @@
-import csv
 from tkinter import Tk, Label, Button
 from Estructura import Estructura
 
@@ -180,53 +179,6 @@ class GUI:
         self.fijarColoresLayer3()
         self.fijarColoresLayer4()
         return
-    
-    def leerMat(self):
-        data_array = []
-        m = []
-        with open(docDir, newline='') as myFile:
-            reader = csv.reader(myFile)
-            for column in reader:
-                result = column[0].split(";")
-                data = result[0]
-                data_array.append(data)
-        data_array = data_array[0:]
-        print("Datos del archivo: ")
-        print(data_array)
-
-        #Converts data to int
-        for column in data_array:
-            m.append(int(column))
-        
-        mat = m
-
-        
-    
-        #Layer 1, la primera fila de arriba hacia abajo
-        self.estructura.layer1[0].color = mat[0]
-        self.estructura.layer1[1].color = mat[1]
-        self.estructura.layer1[2].color = mat[2]
-        self.estructura.layer1[3].color = mat[3]
-
-        #Layer 2, la segunda fila de arriba hacia abajo
-        self.estructura.layer2[0].color = mat[4]
-        self.estructura.layer2[1].color = mat[5]
-        self.estructura.layer2[2].color = mat[6]
-        self.estructura.layer2[3].color = mat[7]
-
-        #Layer 3, la tercera fila de arriba hacia abajo
-        self.estructura.layer3[0].color = mat[8]
-        self.estructura.layer3[1].color = mat[9]
-        self.estructura.layer3[2].color = mat[10]
-        self.estructura.layer3[3].color = mat[11]
-
-        #Layer 4, la ultima fila de arriba hacia abajo
-        self.estructura.layer4[0].color = mat[12]
-        self.estructura.layer4[1].color = mat[13]
-        self.estructura.layer4[2].color = mat[14]
-        self.estructura.layer4[3].color = mat[15]
-
-        self.actualizarColores()
 
     def reset(self):
         self.estructura.layer0[0].color = self.estructura.layer0[0].inicial

@@ -1,13 +1,17 @@
 from Nodo import Nodo
+from Reader import MatrixReader
 
 class Estructura:
     def __init__(self):
+        self.reader = MatrixReader("matriz.csv")
+        self.mr = self.reader.getMatrix()
+        
         #inicializar 
-        self.layer0 = [Nodo(-1)]
-        self.layer1 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
-        self.layer2 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
-        self.layer3 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
-        self.layer4 = [Nodo(0),Nodo(1),Nodo(2),Nodo(3)]
+        self.layer0 = [Nodo(self.mr[16])]
+        self.layer1 = [Nodo(self.mr[12]),Nodo(self.mr[13]),Nodo(self.mr[14]),Nodo(self.mr[15])]
+        self.layer2 = [Nodo(self.mr[8]),Nodo(self.mr[9]),Nodo(self.mr[10]),Nodo(self.mr[11])]
+        self.layer3 = [Nodo(self.mr[4]),Nodo(self.mr[5]),Nodo(self.mr[6]),Nodo(self.mr[7])]
+        self.layer4 = [Nodo(self.mr[0]),Nodo(self.mr[1]),Nodo(self.mr[2]),Nodo(self.mr[3])]
 
         #Conexiones Layer 0
         self.layer0[0].up = self.layer1[0]
