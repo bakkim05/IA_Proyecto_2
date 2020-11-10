@@ -135,6 +135,22 @@ class Estructura:
         layerUp[colum-1].color = layerDown[colum-1].temp
         return
 
+    def movLeftVoid(self, node):
+        node.left.temp = node.color
+        node.temp = node.left.color
+
+        node.left.color = node.left.temp
+        node.color = node.temp
+        return
+
+    def movRightVoid(self, node):
+        node.right.temp = node.color
+        node.temp = node.right.color
+
+        node.right.color = node.right.temp
+        node.color = node.temp
+        return
+
     def resetZero(self):
         zero = MatrixReader("reset.csv")
         mr = zero.getMatrix()
