@@ -157,14 +157,13 @@ class Estructura:
         return
 
     def resetZero(self):
-        zero = MatrixReader("reset.txt")
-        mr = zero.getMatrix()
-
-        self.layer0 = [Nodo(mr[16])]
-        self.layer1 = [Nodo(mr[12]),Nodo(mr[13]),Nodo(mr[14]),Nodo(mr[15])]
-        self.layer2 = [Nodo(mr[8]),Nodo(mr[9]),Nodo(mr[10]),Nodo(mr[11])]
-        self.layer3 = [Nodo(mr[4]),Nodo(mr[5]),Nodo(mr[6]),Nodo(mr[7])]
-        self.layer4 = [Nodo(mr[0]),Nodo(mr[1]),Nodo(mr[2]),Nodo(mr[3])]
+        self.reader.resetMatrix()
+        self.mr = self.reader.getMatrix()
+        self.layer0 = [Nodo(self.mr[16])]
+        self.layer1 = [Nodo(self.mr[12]),Nodo(self.mr[13]),Nodo(self.mr[14]),Nodo(self.mr[15])]
+        self.layer2 = [Nodo(self.mr[8]),Nodo(self.mr[9]),Nodo(self.mr[10]),Nodo(self.mr[11])]
+        self.layer3 = [Nodo(self.mr[4]),Nodo(self.mr[5]),Nodo(self.mr[6]),Nodo(self.mr[7])]
+        self.layer4 = [Nodo(self.mr[0]),Nodo(self.mr[1]),Nodo(self.mr[2]),Nodo(self.mr[3])]
 
         return
 
@@ -180,8 +179,6 @@ class Estructura:
         arrayMatrix.append(self.layer0[0].color)
         self.reader.saveMatrix(arrayMatrix)
         
-
-
     def getMatrixRow(self, layer):
         arrayLayer = []
         for i in range(len(layer)):

@@ -209,18 +209,6 @@ class GUI:
 
     def reset(self):
         self.estructura.resetZero()
-        self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
-        
-        for i in range(len(self.estructura.layer1)):
-            self.estructura.layer1[i].color = self.estructura.layer1[i].inicial
-            self.estructura.layer1[i].temp = -1
-            self.estructura.layer2[i].color = self.estructura.layer2[i].inicial
-            self.estructura.layer2[i].temp = -1
-            self.estructura.layer3[i].color = self.estructura.layer3[i].inicial
-            self.estructura.layer3[i].temp = -1
-            self.estructura.layer4[i].color = self.estructura.layer4[i].inicial
-            self.estructura.layer4[i].temp = -1
-
         self.actualizarColores()
 
     def movLateral(self, direccion, layer):
