@@ -84,6 +84,7 @@ class GUI:
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
         self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.reset()) #cambiar funcion al de save
         self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
+        self.solveButton = Button(master, text="SOLVE", width=self.width, command = lambda: self.solve())
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -158,6 +159,7 @@ class GUI:
         self.resetButton.grid(row = 0, column = 8)
         self.saveButton.grid(row=0, column = 9)
         self.exitButton.grid(row = 1, column = 9)
+        self.solveButton.grid(row = 7, column = 9)
 
 
     def fijarColoresLayer0(self):
@@ -224,7 +226,25 @@ class GUI:
         else:
             messagebox.showinfo('Return','You will now return to the application screen')
 
+    def solve(self):
+        import tkinter as tk
 
+        string ='Mover el blanco a:\n'
+        lista = ['Derecha','arriba','abajo','izquierda','arriba','izquierda','abajo','derecha','derecha','arriba']
+        for i in range(len(lista)):
+            string += lista[i]+ '\n'
+
+
+        root = tk.Tk()
+        S = tk.Scrollbar(root)
+        T = tk.Text(root, height=10, width=20)
+        S.pack(side=tk.RIGHT, fill=tk.Y)
+        T.pack(side=tk.LEFT, fill=tk.Y)
+        S.config(command=T.yview)
+        T.config(yscrollcommand=S.set)
+        quote = string
+        T.insert(tk.END, quote)
+        tk.mainloop()
             
     def reset(self):
         self.estructura.resetZero()
