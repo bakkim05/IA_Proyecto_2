@@ -1,9 +1,10 @@
 from Nodo import Nodo
 from Reader import MatrixReader
+import numpy as np
 
 class Estructura:
     def __init__(self):
-        self.reader = MatrixReader("matriz.csv")
+        self.reader = MatrixReader("matrix.txt")
         self.mr = self.reader.getMatrix()
 
         #inicializar 
@@ -156,7 +157,7 @@ class Estructura:
         return
 
     def resetZero(self):
-        zero = MatrixReader("reset.csv")
+        zero = MatrixReader("reset.txt")
         mr = zero.getMatrix()
 
         self.layer0 = [Nodo(mr[16])]
@@ -166,3 +167,23 @@ class Estructura:
         self.layer4 = [Nodo(mr[0]),Nodo(mr[1]),Nodo(mr[2]),Nodo(mr[3])]
 
         return
+
+    def saveMatrix(self):
+        arrayMatrix = []
+        arrayMatrix.append(self.getMatrixRow(self.layer4))
+        arrayMatrix.append(self.getMatrixRow(self.layer3))
+        arrayMatrix.append(self.getMatrixRow(self.layer2))
+        arrayMatrix.append(self.getMatrixRow(self.layer1))
+        arrayMatrix = np.array(arrayMatrix)
+        arrayMatrix = arrayMatrix.reshape(1,16)[0]
+        arrayMatrix = np.ndarray.tolist(arrayMatrix)
+        arrayMatrix.append(self.layer0[0].color)
+        self.reader.saveMatrix(arrayMatrix)
+        
+
+
+    def getMatrixRow(self, layer):
+        arrayLayer = []
+        for i in range(len(layer)):
+            arrayLayer.append(layer[i].color)
+        return arrayLayer

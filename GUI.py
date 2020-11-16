@@ -81,7 +81,7 @@ class GUI:
 
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
-        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.reset()) #cambiar funcion al de save
+        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.estructura.saveMatrix()) #cambiar funcion al de save
 
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
