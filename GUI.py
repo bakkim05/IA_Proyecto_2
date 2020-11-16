@@ -81,7 +81,7 @@ class GUI:
 
 
         #Botones Auxiliares
-        self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
+        self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.sure())
         self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.estructura.saveMatrix())
         self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
         self.solveButton = Button(master, text="SOLVE", width=self.width, command = lambda: self.solve())
