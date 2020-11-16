@@ -13,6 +13,10 @@ class Estructura:
         self.layer3 = [Nodo(self.mr[4]),Nodo(self.mr[5]),Nodo(self.mr[6]),Nodo(self.mr[7])]
         self.layer4 = [Nodo(self.mr[0]),Nodo(self.mr[1]),Nodo(self.mr[2]),Nodo(self.mr[3])]
 
+        self.connect()
+
+
+    def connect(self):
         #Conexiones Layer 0
         self.layer0[0].up = self.layer1[0]
 
