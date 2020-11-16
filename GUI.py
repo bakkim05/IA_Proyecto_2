@@ -217,7 +217,6 @@ class GUI:
 
         self.actualizarColores()
 
-
     def movLateral(self, direccion, layer):
         if (direccion == 0):
             if layer == 1:
@@ -261,61 +260,70 @@ class GUI:
                     self.estructura.movUpVoid(self.estructura.layer0, self.estructura.layer1, colum)
                     self.fijarColoresLayer0()
                     self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
                     self.fijarColoresLayer1()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer2[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer3[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer4()
-                return
+                    return
             elif colum == 2:
                 if self.estructura.layer1[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
                     self.fijarColoresLayer1()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer2[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer3[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer4()
-                return
+                    return
             elif colum == 3:
                 if self.estructura.layer1[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
                     self.fijarColoresLayer1()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer2[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer3[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer4()
-                return
+                    return
             elif colum == 4:
                 if self.estructura.layer1[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer2, colum)
                     self.fijarColoresLayer1()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer2[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer3, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer3[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer4, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer4()
-                return
+                    return
 
         elif (direccion == 1):
             if colum == 1:
@@ -323,61 +331,70 @@ class GUI:
                     self.estructura.movUpVoid(self.estructura.layer1, self.estructura.layer0, colum)
                     self.fijarColoresLayer1()
                     self.fijarColoresLayer0()
+                    return
                 elif self.estructura.layer2[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer3[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer4[0].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
                     self.fijarColoresLayer4()
                     self.fijarColoresLayer3()
-                return
+                    return
             elif colum == 2:
                 if self.estructura.layer2[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer3[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer4[1].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
                     self.fijarColoresLayer4()
                     self.fijarColoresLayer3()
-                return
+                    return
             elif colum == 3:
                 if self.estructura.layer2[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer3[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer4[2].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
                     self.fijarColoresLayer4()
                     self.fijarColoresLayer3()
-                return
+                    return
             elif colum == 4:
                 if self.estructura.layer2[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer2, self.estructura.layer1, colum)
                     self.fijarColoresLayer2()
                     self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer3[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer3, self.estructura.layer2, colum)
                     self.fijarColoresLayer3()
                     self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer4[3].color == -1:
                     self.estructura.movUpVoid(self.estructura.layer4, self.estructura.layer3, colum)
                     self.fijarColoresLayer4()
                     self.fijarColoresLayer3()
-                return 
+                    return
 
     def singularVertical(self, direccion, row):
         #direccion == 0 -> movimiento a la izquierda
@@ -385,116 +402,140 @@ class GUI:
             if row == 1:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer1[0])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer1[1])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer1[2])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer1[3])
-                    self.fijarColoresLayer1
-                return
+                    self.fijarColoresLayer1()
+                    return
             elif row == 2:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer2[0])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer2[1])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer2[2])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer2[3])
-                    self.fijarColoresLayer2
-                return
+                    self.fijarColoresLayer2()
+                    return
             elif row == 3:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer3[0])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer3[1])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer3[2])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer3[3])
-                    self.fijarColoresLayer3
-                return
+                    self.fijarColoresLayer3()
+                    return
             elif row == 4:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer4[0])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer4[1])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer4[2])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movLeftVoid(self.estructura.layer4[3])
-                    self.fijarColoresLayer4
-                return
+                    self.fijarColoresLayer4()
+                    return
 
         #direccion == 1 -> Movimiento para la derecha
         elif (direccion == 1):
             if row == 1:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer1[0])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer1[1])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer1[2])
-                    self.fijarColoresLayer1
+                    self.fijarColoresLayer1()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer1[3])
-                    self.fijarColoresLayer1
-                return
+                    self.fijarColoresLayer1()
+                    return
             elif row == 2:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer2[0])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer2[1])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer2[2])
-                    self.fijarColoresLayer2
+                    self.fijarColoresLayer2()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer2[3])
-                    self.fijarColoresLayer2
-                return
+                    self.fijarColoresLayer2()
+                    return
             elif row == 3:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer3[0])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer3[1])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer3[2])
-                    self.fijarColoresLayer3
+                    self.fijarColoresLayer3()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer3[3])
-                    self.fijarColoresLayer3
-                return
+                    self.fijarColoresLayer3()
+                    return
             elif row == 4:
                 if self.estructura.layer1[0].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer4[0])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[1].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer4[1])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[2].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer4[2])
-                    self.fijarColoresLayer4
+                    self.fijarColoresLayer4()
+                    return
                 elif self.estructura.layer1[3].color == -1:
                     self.estructura.movRightVoid(self.estructura.layer4[3])
-                    self.fijarColoresLayer4
-                return
+                    self.fijarColoresLayer4()
+                    return
 
