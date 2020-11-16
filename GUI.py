@@ -85,6 +85,7 @@ class GUI:
         self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.reset()) #cambiar funcion al de save
         self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
         self.solveButton = Button(master, text="SOLVE", width=self.width, command = lambda: self.solve())
+        
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
