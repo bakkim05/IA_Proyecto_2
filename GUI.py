@@ -82,9 +82,8 @@ class GUI:
 
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
-        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.reset()) #cambiar funcion al de save
-        self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
-        self.solveButton = Button(master, text="SOLVE", width=self.width, command = lambda: self.solve())
+        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.estructura.saveMatrix()) #cambiar funcion al de save
+
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -248,18 +247,6 @@ class GUI:
             
     def reset(self):
         self.estructura.resetZero()
-        self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
-        
-        for i in range(len(self.estructura.layer1)):
-            self.estructura.layer1[i].color = self.estructura.layer1[i].inicial
-            self.estructura.layer1[i].temp = -1
-            self.estructura.layer2[i].color = self.estructura.layer2[i].inicial
-            self.estructura.layer2[i].temp = -1
-            self.estructura.layer3[i].color = self.estructura.layer3[i].inicial
-            self.estructura.layer3[i].temp = -1
-            self.estructura.layer4[i].color = self.estructura.layer4[i].inicial
-            self.estructura.layer4[i].temp = -1
-
         self.actualizarColores()
 
     def movLateral(self, direccion, layer):
