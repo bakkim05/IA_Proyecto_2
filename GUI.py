@@ -1,5 +1,6 @@
 from tkinter import Tk, Label, Button
 from Estructura import Estructura
+from tkinter import messagebox
 
 docDir = 'matriz.csv'
 
@@ -82,7 +83,7 @@ class GUI:
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.reset())
         self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.reset()) #cambiar funcion al de save
-
+        self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
 
         #Acutaliza los colores de los LABELS acorde al OJBETO Estructura
         self.fijarColoresLayer0()
@@ -156,6 +157,7 @@ class GUI:
         #Desplegar Botones Auxiliares
         self.resetButton.grid(row = 0, column = 8)
         self.saveButton.grid(row=0, column = 9)
+        self.exitButton.grid(row = 1, column = 9)
 
 
     def fijarColoresLayer0(self):
@@ -207,6 +209,23 @@ class GUI:
         self.fijarColoresLayer4()
         return
 
+
+    def sure(self):
+        MsgBox = messagebox.askquestion ('Reset','Are you sure you want to reset',icon = 'warning')
+        if MsgBox == 'yes':
+            self.reset()
+        else:
+            messagebox.showinfo('Return','You will return to the game')
+
+    def exit(self):
+        MsgBox = messagebox.askquestion ('Exit Application','Are you sure you want to exit the application',icon = 'warning')
+        if MsgBox == 'yes':
+            messagebox.showinfo('Error','Please click in the ¨X¨ from the game window')
+        else:
+            messagebox.showinfo('Return','You will now return to the application screen')
+
+
+            
     def reset(self):
         self.estructura.resetZero()
         self.estructura.layer0[0].color = self.estructura.layer0[0].inicial
