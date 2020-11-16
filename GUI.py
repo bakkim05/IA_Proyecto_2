@@ -82,7 +82,7 @@ class GUI:
 
         #Botones Auxiliares
         self.resetButton = Button(master, text="RESET", width=self.width, command = lambda: self.sure())
-        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.estructura.saveMatrix())
+        self.saveButton = Button(master, text="SAVE", width=self.width, command = lambda: self.sureSave())
         self.exitButton = Button(master, text="EXIT", width=self.width, command = lambda: self.exit())
         self.solveButton = Button(master, text="SOLVE", width=self.width, command = lambda: self.solve())
         
@@ -219,6 +219,14 @@ class GUI:
             self.reset()
         else:
             messagebox.showinfo('Return','You will return to the game')
+
+    def sureSave(self):
+        MsgBox = messagebox.askquestion ('Reset','Are you sure you want to save',icon = 'warning')
+        if MsgBox == 'yes':
+            self.estructura.saveMatrix()
+        else:
+            messagebox.showinfo('Return','You will return to the game')
+
 
     def exit(self):
         MsgBox = messagebox.askquestion ('Exit Application','Are you sure you want to exit the application',icon = 'warning')
