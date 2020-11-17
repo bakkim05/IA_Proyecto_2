@@ -37,6 +37,7 @@ class Matriz:
 
             
 def buscarPosBlanco(x, matriz):
+    global abiertos
     for i in range(0,len(matriz)):
         for j in range(0,len(matriz[i])):
             if matriz[i][j] == -1:
@@ -104,7 +105,8 @@ def moverBlanco(matriz):
 
 
 def obtenerMatrices(matriz):
-    
+
+    global cerrados
     nodo = moverBlanco(matriz)
     
     mat1 = copy.deepcopy(matriz)
@@ -154,6 +156,7 @@ def obtenerMatrices(matriz):
     for nodos in nodo: 
         if nodos != [5,5]:
             validaNodo.append(nodos)
+
     
     print("Matrices: ")
     print(mat1)
@@ -177,11 +180,12 @@ def medirPasos(matriz):
     nota = []
     oper = []
     resu = []
-    peso = 0
-    
-    abiertos.append(mat[1])
-    cerrados.append(buscarPosBlanco(-1,mat[1]))
-    
+    peso = 0    
+
+
+    abiertos += mat[1][:-1]
+    cerrados.append(mat[1][-1])
+
     
     for i in range(len(mat[0])):
         for j in range(len(mat[0][i])):
@@ -193,13 +197,13 @@ def medirPasos(matriz):
     for i in range(len(nota)):
         for j in range(len(nota[i])):
             peso+=nota[i][j]
-        resu.append(peso)
+        resu.append(peso + distancia(mat[1][-1],mat[1][i]))
         peso = 0
     
     print("resultados: ")
     print(resu)
-    print()
-    
+    print()               
+
     menor = min(resu)
     nodoMenor = 0
 
@@ -207,24 +211,24 @@ def medirPasos(matriz):
         if menor == resu[i]:
             nodoMenor = i
             break
-    
+                
     print("abiertos: ")
     print(abiertos)
     print()
     print("cerrados: ")
     print(cerrados)
     print()
-    print("menor")
+    print("Nota del nodo menor")
     print(menor)
     print()
-    print("nodoMenor")
+    print("Posición del nodo menor")
     print(nodoMenor)
     print()
-    
+    print("Matriz a evaluar es: ")
     return mat[0][nodoMenor]
 
 
-def solu(matriz):
+def main(matriz):
     
     global meta,solucion
     matFinal = medirPasos(matriz)
@@ -241,7 +245,34 @@ def solu(matriz):
     print("Una solución: ")
     
     return solucion
-    
+
+
+def soluciona(matriz):
+    global meta,abiertos,cerrados
+    nuevaMat = medirPasos(matriz)
+    nuevaAux = nuevaMat.copy()
+    evaluMat = []
+    conteo   = 0
+
+    while(conteo<45):
+        if nuevaMat == meta:
+
+            print("Logrado")
+            return nuevaMat
+        else:
+            evaluMat = medirPasos(nuevaMat)
+            print("Abiertos")
+            print(abiertos)
+            print()
+            print("Cerrados")
+            print(cerrados)
+            print()
+            print("aun no")
+            print()
+
+        conteo += 1
+
+    print("Se excedió el límite de movimientos")
     """
     while salida == False:
         if(matFinal == meta):
