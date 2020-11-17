@@ -224,7 +224,7 @@ def medirPasos(matriz):
     return mat[0][nodoMenor]
 
 
-def main(matriz):
+def solu(matriz):
     
     global meta,solucion
     matFinal = medirPasos(matriz)

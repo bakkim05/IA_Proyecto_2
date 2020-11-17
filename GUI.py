@@ -1,6 +1,7 @@
 from tkinter import Tk, Label, Button
 from Estructura import Estructura
 from tkinter import messagebox
+from A_estrella import solu
 
 docDir = 'matriz.csv'
 
@@ -239,7 +240,8 @@ class GUI:
         import tkinter as tk
 
         string ='Mover el blanco a:\n'
-        lista = ['Derecha','arriba','abajo','izquierda','arriba','izquierda','abajo','derecha','derecha','arriba']
+        lista = solu([[0,1,2,3],[0,1,2,3],[0,1,2,3],[0,1,2,3],[-1]])
+        print(lista)
         for i in range(len(lista)):
             string += lista[i]+ '\n'
 
